@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<var id= "x"> 1</var>
+<script>
+// function for getting index for option
+function getIndex() {
+    document.getElementById("demo").innerHTML =
+                document.getElementById("selecta").selectedIndex;
+}
+//calculate
+function getprice() {
+    var x = document.getElementById("width").value;
+    var y = document.getElementById("height").value;
+    var z = document.getElementById("deep").value;
+    var e = document.getElementById("selectm");
+    var ep = e.options[e.selectedIndex].value;
+    document.getElementById("demo1").innerHTML=(x+y+z)*ep ;
+}
+function insRow(id) {
+    var x = document.getElementById(id).insertRow(1);
+    var y = x.insertCell(0);
+    var z = x.insertCell(1);
+    var price= x.insertCell(2);
+    y.innerHTML = z.innerHTML = "damn";
+    price.innerHTML=0;
+}
+function changeContent(id, row, cell, content) {
+    var x = document.getElementById(id).rows[row].cells;
+    x[cell].innerHTML = content;
+}
+var Rectangle = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+    function handle(e){
+        if(e.keyCode === 13){
+            e.preventDefault(); // Ensure it is only this code that rusn
+            var x=document.getElementById("destination").value;
+    var thelocation= "http://hk.centanet.com/findproperty/zh-HK/Home/SearchResult/?keyword="
+    var end= "";
+    thelocation=thelocation+x;
+    window.open(thelocation);
+        }
+    }
+function checkfloorplay(){
+    var x=document.getElementById("destination").value;
+    var thelocation= "http://hk.centanet.com/findproperty/zh-HK/Home/SearchResult/?keyword="
+    var end= "";
+    thelocation=thelocation+x;
+    window.open(thelocation);
+}
+</script>
+</head>
+<body>
+<form action="#">
+    <input type="text" id="destination" onkeypress="handle(event)" />
+</form>
+</body>
+</html>
