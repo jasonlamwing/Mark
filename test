@@ -14,6 +14,43 @@
 
 <a href="https://www.google.com">This is a google link</a>
 
-<img src="https://img.kekeke.cc/t/KhYCc6hpgS.jpeg" width="104" height="142">
+<img 
+
+src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+
+alt="google" width="104" height="142">
+
+
+<?php
+// connect and login to FTP server
+$ftp_server = "ftp.example.com";
+$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
+$login = ftp_login($ftp_conn, $ftp_username, $ftp_userpass);
+
+$local_file = "local.zip";
+$server_file = "server.zip";
+
+// initiate download
+$d = ftp_nb_get($ftp_conn, $local_file, $server_file, FTP_ASCII)
+
+while ($d == FTP_MOREDATA)
+  {
+  // do whatever you want
+  // continue downloading
+  $d = ftp_nb_continue($ftp_conn);
+  }
+
+if ($d != FTP_FINISHED)
+  {
+  echo "Error downloading $server_file";
+  exit(1);
+  }
+
+// close connection
+ftp_close($ftp_conn);
+?>
+
+
+
 </body>
 </html>
