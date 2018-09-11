@@ -1,0 +1,19 @@
+<html>
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+
+<a href="https://www.google.com">This is a google link</a>
+
+<img src="https://img.kekeke.cc/t/KhYCc6hpgS.jpeg" width="104" height="142">
+</body>
+</html>
